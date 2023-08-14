@@ -1,0 +1,30 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+
+    Modify the contents below
+*@
+
+@*
+    To recap:
+    as we do with PHP by adding <?php ?> for any php code,
+    in razor pages, we use @{ and } for C# code :-)
+    *@
+
+@{
+    ViewData["Title"] = "Greeting our client!";
+}
+
+<h2>Welcome</h2>
+
+@* Remember that we passed:
+    > ViewData["Greeting"]
+    > ViewData["Count"]*@
+<ul>
+    @{
+     
+        @for (int i = 0; i < (int)(ViewData["Age"] ?? ""); i++)
+        {
+            <li>@ViewData["Greeting"]</li>
+        }
+    }
+</ul>
